@@ -1,0 +1,15 @@
+{{nom|upper}}
+{# ceci est un commentaire #}
+{% set A=4 %}
+{{A}}
+{% if 'Fabien' starts with 'F' %}
+    commence par F 
+{% endif %}
+{% if 'Fabien' ends with 'n' %}
+    finit par n
+{% endif %}
+{{'&hello3A24'|lower|trim('&')}}
+<a href="{{path('afficher')}}">lien1</a>
+<a href="{{url('afficher')}}">lien2</a>
+{# <img src="{{asset('assets/img/Reyna.jpg')}}">#}
+<h1>author :{{name}} </h1>

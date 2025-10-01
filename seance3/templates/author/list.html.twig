@@ -1,0 +1,18 @@
+<h1>Liste des Auteurs</h1>
+
+{% if authors is not defined or authors is empty %}
+    <p>Aucun auteur trouve</p>
+{% else %}
+    {% for author in authors %}
+        <img src="{{ author.picture }}" alt="{{ author.username }}" width="100">
+        {{ author.username|upper }} - {{ author.email }} - {{ author.nb_books }} livres
+        <a href="{{ path('app_author_details', {id: author.id}) }}">details</a>
+        <hr>
+    {% endfor %}
+
+    <p>nbr total auteurs {{ authors|length }}</p>
+
+    <p>nbr total livre: 
+        {{ authors|map(a => a.nb_books)|reduce((carry, v) => carry + v) }}
+    </p>
+{% endif %}
